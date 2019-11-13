@@ -21,8 +21,10 @@ def evaluadordeJuego(jugadorenTurno, puntosobtenidos):
         #input('presione enter para continuar')
     elif puntosobtenidos >= 450:
         jugadorenTurno[1] = True
-        print(jugadorenTurno[0], 'Ahora esta habilitado para sumar puntos')
+        baja(2)
+        print('  ====>>',jugadorenTurno[0], 'Ahora esta habilitado para sumar puntos')
     else:
+        baja(2)
         print('no consiguió suficientes puntos para entrar al juego')
     return terminaeljuego
 def bienvenida():

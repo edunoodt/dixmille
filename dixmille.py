@@ -15,9 +15,10 @@ while not ganoAlguien and respuesta!='SALIR':
         puntajeTiro=1
         nuevotiro=5
         puntajeJugada=0
+        controldeHabilitación=True
         #if primerTiro:
         sop.encabezadoturno(estaJugando)
-        while puntajeTiro!=0 and respuesta!='SALIR':
+        while puntajeTiro!=0 and respuesta!='SALIR' and controldeHabilitación:
             #primerTiro, nuevotiro, puntajeJugada=sop.juego(primerTiro,nuevotiro,puntajeJugada)
             tiroActual = sop.tiralosdados(nuevotiro)
             sop.baja(2)
@@ -29,11 +30,14 @@ while not ganoAlguien and respuesta!='SALIR':
             print('====> En este tiro hizo:',puntajeTiro)
 
             print('====> Suma:', puntajeJugada)
-            if puntajeTiro==0:
-                print('====>  ','Termino')
+            if estaJugando[2]==False and puntajeJugada>=450:
+                controldeHabilitación=False
+            elif puntajeTiro!=0:
+                primerTiro = False
+                print('Tira: ', nuevotiro)
             else:
-                primerTiro=False
-                print('Tira: ',nuevotiro)
+                sop.baja(2)
+                print('====>  ', 'Termino su turjo. Pasa al siguiente jugador')
             respuesta=input('Presione cualquier tecla para continuar o ingrese "Salir" para terminar el juego> ').upper()
         if respuesta!='SALIR':ganoAlguien=sop.evaluadordeJuego(estaJugando,puntajeJugada)
         turno+=1
