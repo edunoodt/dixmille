@@ -1,3 +1,2 @@
-a=hola
-
-print(a)
+import os
+os.system('cls')

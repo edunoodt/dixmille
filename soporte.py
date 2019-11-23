@@ -15,9 +15,11 @@ def evaluadordeJuego(jugadorenTurno, puntosobtenidos):
         elif puntosobtenidos + jugadorenTurno[2] < 10000:
             jugadorenTurno[2] = puntosobtenidos + jugadorenTurno[2]
         else:
-            print('Se paso. Conserva los puntos de la jugada anterior')
+            baja(2)
+            print(' ====>> Se pasó. Conserva los puntos de la jugada anterior')
 
-        print('Usted tiene', jugadorenTurno[2], ' puntos')
+        #baja(2)
+        #print('  =====>>  Usted tiene', jugadorenTurno[2], ' puntos')
         #input('presione enter para continuar')
     elif puntosobtenidos >= 450:
         jugadorenTurno[1] = True
@@ -31,21 +33,17 @@ def bienvenida():
     baja(20)
     print ('             Bienvenido al juego de los 10.000')
     baja(2)
-    print('    DDDDDDD     III  XX      XX     MM        MM  III  LLL       LLL       EEEEEEEE')
-    print('    DD   DDD    III   XX    XX      MMM      MMM  III  LLL       LLL       EEEEEEEE')
-    print('    DD    DDD   III    XX  XX       MMMM    MMMM  III  LLL       LLL       EEE')
-    print('    DD     DDD  III     XXXX        MM MM  MM MM  III  LLL       LLL       EEEEE')
-    print('    DD     DDD  III      XX         MM  MMMM  MM  III  LLL       LLL       EEEEE')
-    print('    DD     DDD  III     XXXX        MM   MM   MM  III  LLL       LLL       EEE')
-    print('    DD    DDD   III    XX  XX       MM        MM  III  LLL       LLL       EEE')
-    print('    DD   DDD    III   XX    XX      MM        MM  III  LLLLLLLLL LLLLLLLLL EEEEEEEEE')
-    print('    DDDDDDD     III  XX      XX     MM        MM  III  LLLLLLLLL LLLLLLLLL EEEEEEEEE')
+    print('    DDDDDDDD     III  XX      XX     MMM        MMM  III  LLL       LLL       EEEEEEEE')
+    print('    DDD   DDD    III   XX    XX      MMMM      MMMM  III  LLL       LLL       EEEEEEEE')
+    print('    DDD    DDD   III    XX  XX       MMMM     MMMMM  III  LLL       LLL       EEE')
+    print('    DDD     DDD  III     XXXX        MMM MM  MM MMM  III  LLL       LLL       EEEEE')
+    print('    DDD     DDD  III      XX         MMM  MMMM  MMM  III  LLL       LLL       EEEEE')
+    print('    DDD     DDD  III     XXXX        MMM   MM   MMM  III  LLL       LLL       EEE')
+    print('    DDD    DDD   III    XX  XX       MMM        MMM  III  LLL       LLL       EEE')
+    print('    DDD   DDD    III   XX    XX      MMM        MMM  III  LLLLLLLLL LLLLLLLLL EEEEEEEEE')
+    print('    DDDDDDDD     III  XX      XX     MMM        MMM  III  LLLLLLLLL LLLLLLLLL EEEEEEEEE')
 def baja(lineas):
     for i in range (lineas):print()
-"""def muestrainfo(texto,info,veces):
-    for i in range (veces):print('=================================')
-    print('  ',texto,':', info)
-    for i in range(veces):print('=================================')"""
 def instrucciones():
     baja(10)
     respuesta = input('Ingrese "i" para conocer las intrucciones del juego >  ')
